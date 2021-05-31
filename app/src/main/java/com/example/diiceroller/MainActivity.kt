@@ -16,10 +16,16 @@ class MainActivity : AppCompatActivity() {
 
     // build dice
     private fun rollDice() {
+        //dice 1
         val dice = Dice(6) // instantiation
         val diceRoll = dice.roll() // save in variable number rolled
         val resultTextView: TextView = findViewById(R.id.textView)
         resultTextView.text = diceRoll.toString()
+
+        //dice 2
+        val diceRoll2 = dice.roll()
+        val resultTextView2: TextView = findViewById(R.id.textView2)
+        resultTextView2.text = diceRoll2.toString()
     }
 }
 
