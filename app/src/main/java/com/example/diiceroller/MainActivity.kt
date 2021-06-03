@@ -10,21 +10,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val rollButton: Button = findViewById(R.id.button)
-        rollButton.setOnClickListener { rollDice() }
+        val rollButton: Button = findViewById(R.id.button) // variable id button
+        rollButton.setOnClickListener { rollDice() } // on click
     }
 
     // build dice
     private fun rollDice() {
         //dice 1
         val dice = Dice(6) // instantiation
-        val diceRoll = dice.roll() // save in variable number rolled
-        val resultTextView: TextView = findViewById(R.id.textView)
-        resultTextView.text = diceRoll.toString()
+        val diceRoll = dice.roll() // assignment number rolled
+        val resultTextView: TextView = findViewById(R.id.textView) // variable id text1
+        resultTextView.text = diceRoll.toString() // assignment
 
         //dice 2
         val diceRoll2 = dice.roll()
-        val resultTextView2: TextView = findViewById(R.id.textView2)
+        val resultTextView2: TextView = findViewById(R.id.textView2) // variable id text2
         resultTextView2.text = diceRoll2.toString()
     }
 }
