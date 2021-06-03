@@ -13,6 +13,8 @@ class MainActivity : AppCompatActivity() {
 
         val rollButton: Button = findViewById(R.id.button) // variable id button
         rollButton.setOnClickListener { rollDice() } // on click
+
+        rollDice()
     }
 
     // build dice
@@ -21,16 +23,21 @@ class MainActivity : AppCompatActivity() {
         val dice = Dice(6) // instantiation
         val diceRoll = dice.roll() // assignment number rolled
 
-        val diceImage: ImageView = findViewById(R.id.imageView3)
+        val diceImage: ImageView = findViewById(R.id.imageView3) // variable imageView
 
-        when(diceRoll) {
-            1 -> diceImage.setImageResource(R.drawable.dice_1)
-            2 -> diceImage.setImageResource(R.drawable.dice_2)
-            3 -> diceImage.setImageResource(R.drawable.dice_3)
-            4 -> diceImage.setImageResource(R.drawable.dice_4)
-            5 -> diceImage.setImageResource(R.drawable.dice_5)
-            6 -> diceImage.setImageResource(R.drawable.dice_6)
+        // image dice choice by number
+        val drawableResource  = when (diceRoll) {
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            else -> R.drawable.dice_6
         }
+
+        // imageView show
+        diceImage.setImageResource(drawableResource)
+        diceImage.contentDescription = diceRoll.toString() // description imageView
 
 
        /* val resultTextView: TextView = findViewById(R.id.textView) // variable id text1
